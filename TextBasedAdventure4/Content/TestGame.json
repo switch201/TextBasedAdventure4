@@ -1,0 +1,14 @@
+{
+  "Rooms": [
+    "FirstRoom",
+    "SecondRoom"
+  ],
+  "Connections": [
+    {
+      "Room1": "FirstRoom",
+      "Room2": "SecondRoom",
+      "ExitDirection": "west",
+      "EnterDirection": "east"
+    }
+  ]
+}
