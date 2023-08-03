@@ -1,7 +1,7 @@
 ﻿using TextBasedAdventure4;
 using TextBasedAdventure4.GameController;
-using TextBasedAdventure4.Games.Factories;
-using TextBasedAdventure4.Games;
+using TextBasedAdventure4.GameObjects.Factories;
+using TextBasedAdventure4.GameObjects;
 
 var game = GameObjectFactory.CreateGame("TestGame");
 

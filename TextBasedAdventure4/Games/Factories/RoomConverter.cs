@@ -6,7 +6,7 @@
 //using Newtonsoft.Json;
 //using Newtonsoft.Json.Linq;
 
-//namespace TextBasedAdventure4.Games.Factories
+//namespace TextBasedAdventure4.GameObjects.Factories
 //{
 //    internal class RoomConverter : JsonConverter<Room>
 //    {

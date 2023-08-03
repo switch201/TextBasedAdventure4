@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace TextBasedAdventure4.Games
+namespace TextBasedAdventure4.GameObjects
 {
     public class Game
     {

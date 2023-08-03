@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace TextBasedAdventure4.Games.Factories
+namespace TextBasedAdventure4.GameObjects.Factories
 {
     public static class GameObjectFactory
     {
