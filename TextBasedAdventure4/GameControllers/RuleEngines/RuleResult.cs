@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextBasedAdventure4.GameController.RuleEngines
+namespace TextBasedAdventure4.GameControllers.RuleEngines
 {
     public class RuleResult
     {

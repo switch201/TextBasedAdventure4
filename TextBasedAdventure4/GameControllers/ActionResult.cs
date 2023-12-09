@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TextBasedAdventure4.GameController.RuleEngines;
+using TextBasedAdventure4.GameControllers.RuleEngines;
 
-namespace TextBasedAdventure4.GameController
+namespace TextBasedAdventure4.GameControllers
 {
     public class ActionResult
     {

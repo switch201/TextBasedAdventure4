@@ -1,0 +1,11 @@
+{
+  "Name": "Strong Attack",
+  "Description": "Its a Strong Attack",
+  "Level": 1,
+  "CardEffects": {
+    "Damage": 2,
+    "Block": 0,
+    "Cost": 2
+  },
+  "Color": "Red"
+}

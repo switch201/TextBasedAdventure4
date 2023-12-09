@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextBasedAdventure4.GameObjects
+namespace TextBasedAdventure4.Games.Actors
 {
-    public class Player : Actor
+    public class NPC : Actor
     {
     }
 }

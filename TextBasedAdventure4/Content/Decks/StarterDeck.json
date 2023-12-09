@@ -1,0 +1,11 @@
+{
+  "Name": "Inate Deck",
+  "Color": "White",
+  "Description": "Your Basic set of combat moves, that you can do with your own 2 hands!",
+  "Cards": [
+    "WeakAttack",
+    "StrongAttack",
+    "WeakDefense",
+    "StrongDefense"
+  ]
+}

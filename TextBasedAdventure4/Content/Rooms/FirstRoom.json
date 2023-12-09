@@ -1,4 +1,11 @@
 {
   "Name":  "The First Room",
-  "Description": "A creepy graveyard full of spook wooky stuff."
+  "Description": "A creepy graveyard full of spook wooky stuff.",
+  "Spaces": [
+    [ "", "", "skeletor", "", "" ],
+    [ "", "", "", "", "" ],
+    [ "", "", "", "", "" ],
+    [ "", "", "", "", "" ],
+    [ "", "", "P", "", "" ]
+  ]
 }

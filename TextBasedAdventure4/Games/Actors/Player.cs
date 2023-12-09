@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextBasedAdventure4.GameObjects
+namespace TextBasedAdventure4.Games.Actors
 {
-    public abstract class Actor : GameObject
+    public class Player : Actor
     {
+
     }
 }

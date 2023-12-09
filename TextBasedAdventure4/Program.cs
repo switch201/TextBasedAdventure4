@@ -1,32 +1,17 @@
 ﻿using TextBasedAdventure4;
-using TextBasedAdventure4.GameController;
+using TextBasedAdventure4.GameControllers;
 using TextBasedAdventure4.GameObjects.Factories;
 using TextBasedAdventure4.GameObjects;
 
 var game = GameObjectFactory.CreateGame("TestGame");
 
-game.Start();
 var gameController = new GameController(game);
 
-string userinput = Util.ReadLine();
-
-
-
-while(userinput != "exit")
+var grid = gameController.roomController.GetRoomLayout();
+Util.Write(grid);
+gameController.StartBattle();
+gameController.StartTurn();
+while (gameController.gameState != GameState.Exit)
 {
-    if(userinput == "go test")
-    {
-        var result = gameController.AttemptoChangeRooms(new ActionRequest<Actor, Room, Room>
-        {
-            Subject=game.player,
-            DirectObject=game.Rooms.Last(),
-            IndirectObject=game.GetObjectsRoom(game.player),
-            FollowRules = true
-        });
-    }
-    else
-    {
-        Util.WriteLine("type 'go test'");
-    }
-    userinput = Util.ReadLine();
+    gameController.userInterface.TakeUserInputAndRespond();
 }

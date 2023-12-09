@@ -1,0 +1,9 @@
+{
+  "Name": "Skeletor Deck",
+  "Color": "White",
+  "Description": "Skelly",
+  "Cards": [
+    "WeakAttack",
+    "WeakDefense"
+  ]
+}

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,12 +8,56 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Content\Actors\Player.json" />
+    <None Remove="Content\Actors\Skeletor.json" />
+    <None Remove="Content\Cards\Pary.json" />
+    <None Remove="Content\Cards\Slash.json" />
+    <None Remove="Content\Cards\StrongAttack.json" />
+    <None Remove="Content\Cards\StrongDefense.json" />
+    <None Remove="Content\Cards\WeakAttack.json" />
+    <None Remove="Content\Cards\WeakDefense.json" />
+    <None Remove="Content\Decks\DaggerDeck.json" />
+    <None Remove="Content\Decks\SkeletorDeck.json" />
+    <None Remove="Content\Decks\StarterDeck.json" />
     <None Remove="Content\Rooms\FirstRoom.json" />
     <None Remove="Content\Rooms\SecondRoom.json" />
     <None Remove="Content\TestGame.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Content\Actors\Player.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Actors\skeletor.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Cards\Pary.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Cards\Slash.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Cards\StrongDefense.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Cards\WeakDefense.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Cards\StrongAttack.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Cards\WeakAttack.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Decks\DaggerDeck.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Decks\SkeletorDeck.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Decks\StarterDeck.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Rooms\FirstRoom.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -23,10 +67,6 @@
     <Content Include="Content\TestGame.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="UserInterface\" />
   </ItemGroup>
 
   <ItemGroup>

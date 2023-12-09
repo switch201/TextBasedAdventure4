@@ -1,0 +1,11 @@
+{
+  "Name": "Slash",
+  "Description": "A quick slash of the sword",
+  "Level": 1,
+  "CardEffects": {
+    "Damage": 4,
+    "Block": 0,
+    "Cost": 2
+  },
+  "Color": "Red"
+}

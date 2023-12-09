@@ -1,0 +1,11 @@
+{
+  "Name": "Strong Defense",
+  "Description": "Its a Strong Defense",
+  "Level": 1,
+  "CardEffects": {
+    "Damage": 0,
+    "Block": 2,
+    "Cost": 2
+  },
+  "Color": "Green"
+}

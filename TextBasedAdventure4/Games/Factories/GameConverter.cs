@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using TextBasedAdventure4.Games.Actors;
 
 namespace TextBasedAdventure4.GameObjects.Factories
 {
@@ -14,19 +15,12 @@ namespace TextBasedAdventure4.GameObjects.Factories
         {
             var game = new Game();
             JObject jObject = JObject.Load(reader);
-            foreach (string room in jObject["Rooms"])
-            {
-                game.AddRoom(GameObjectFactory.CreateRoom(room));
-            }
-
-            foreach (var connection in jObject["Connections"])
-            {
-                var room1 = game.Rooms.Single(x => x.Name == (string)connection["Room1"]);
-                var room2 = game.Rooms.Single(x => x.Name == (string)connection["Room2"]);
-                room1.SetExit((string)connection["ExitDirection"], room2);
-                room2.SetExit((string)connection["EnterDirection"], room1);
-            }
-
+            string startingRoom = jObject["StartingRoom"].ToString();
+            var room = GameObjectFactory.CreateRoom(startingRoom);
+            //BAD
+            var player = room.Spaces.SelectMany(x => x.Where(y => y.Ocupent is Player).ToList()).Single();
+            game.player = (Player)player.Ocupent;
+            game.StartingRoom = room;
             return game;
         }
 

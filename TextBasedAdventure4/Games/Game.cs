@@ -4,35 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using TextBasedAdventure4.GameObjects.Factories;
+using TextBasedAdventure4.Games.Rooms;
+using TextBasedAdventure4.Games.Actors;
 
 namespace TextBasedAdventure4.GameObjects
 {
     public class Game
     {
-        public Game()
-        {
-            Rooms = new List<Room>();
-        }
-        public List<Room> Rooms { get; private set; }
+        public Room StartingRoom{ get; set; }
 
         public Player player;
-
-        public void AddRoom(Room room)
-        {
-            Rooms.Add(room);
-        }
-
-        public Room GetObjectsRoom(GameObject gameObject)
-        {
-            return Rooms.Where(x => x.Contents.Contains(gameObject)).Single();
-        }
-
-        public void Start()
-        {
-            var player1 = new Player();
-            player1.Name = "player1";
-            this.player = player1;
-            Rooms.First().AddObject(player1);
-        }
     }
 }

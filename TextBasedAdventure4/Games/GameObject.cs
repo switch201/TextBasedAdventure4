@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,10 @@ namespace TextBasedAdventure4.GameObjects
 {
     public abstract class GameObject
     {
-        private string Description = "";
+        [JsonIgnore]
+        public ConsoleOutput Description { get; set; }
 
-        public string Name = "";
-
-        public string GetName() {
-            return Name;
-        }
+        [JsonIgnore]
+        public ConsoleOutput Name { get; set; }
     }
 }

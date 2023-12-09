@@ -1,0 +1,11 @@
+{
+  "Name": "Pary",
+  "Description": "Allows you to deflect an attack gaining the upper hand.",
+  "Level": 1,
+  "CardEffects": {
+    "Damage": 0,
+    "Block": 4,
+    "Cost": 2
+  },
+  "Color": "Red"
+}

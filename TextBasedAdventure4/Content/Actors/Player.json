@@ -1,0 +1,10 @@
+{
+  "Name": "Jeff",
+  "Description": "Its you The Player!",
+  "ActionPoints": 2,
+  "Deck": "StarterDeck",
+  "Health": 10,
+  "MaxMovement": 4,
+  "CurrentMovement": 4,
+  "HandLimit": 3
+}

@@ -1,0 +1,11 @@
+{
+  "Name": "Weak Attack",
+  "Description": "Its a weak Attack",
+  "Level": 0,
+  "CardEffects": {
+    "Damage": 1,
+    "Block": 0,
+    "Cost": 1
+  },
+  "Color": "Red"
+}
