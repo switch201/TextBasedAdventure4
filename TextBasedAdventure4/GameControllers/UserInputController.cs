@@ -20,16 +20,29 @@ namespace TextBasedAdventure4.GameControllers
         {
             new Inspect(),
             new Move(),
+            new Exit(),
         };
+
+        private List<string> NormalizeInput(string userInput)
+        {
+            userInput = userInput.ToLower();
+            return new List<string>(userInput.Split(' '));
+        }
+
+        private GameAction GetAction(List<string> input)
+        {
+            string actionWord = input.First();
+            return gameActions.Where(x => x.keyWords.Contains(actionWord)).SingleOrDefault();
+        }
 
         public void TakeUserInputAndRespond()
         {
-            string userInput = Util.ReadLine();
-            userInput = userInput.ToLower();
-            List<string> seperatedInputWords = new List<string>(userInput.Split(' '));
-            string actionWord = seperatedInputWords.First();
-            var gameAction = gameActions.Where(x => x.keyWords.Contains(actionWord)).Single();
-            Util.Write(gameAction.RespondToInput(gameController, seperatedInputWords));
+            var seperatedWords = NormalizeInput(Util.ReadLine());
+            var gameAction = GetAction(seperatedWords);
+            if(gameAction != null)
+            {
+                Util.Write(gameAction.RespondToInput(gameController, seperatedWords));
+            }
         }
     }
 }

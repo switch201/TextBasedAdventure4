@@ -76,9 +76,28 @@ namespace TextBasedAdventure4.GameControllers
             }
         }
 
-        public List<ConsoleOutput> GetCardInfo()
+        public List<ConsoleOutput> GetCardInfo(string cardName)
         {
-            return new List<ConsoleOutput>();
+            var ouput = new List<ConsoleOutput>();
+            var card = playerHand.FirstOrDefault(x => x.Name.Message.ToLower() == cardName);
+            if(card == null)
+            {
+                card = playingDeck.FirstOrDefault(x => x.Name.Message.ToLower() == cardName);
+            }
+            if(card == null)
+            {
+                card = discardPile.FirstOrDefault(x => x.Name.Message.ToLower() == cardName);
+            }
+            if(card != null)
+            {
+                return card.GetDescription();
+            }
+            return new List<ConsoleOutput>() { new ConsoleOutput("You don't see that card") };
+        }
+
+        public List<ConsoleOutput> GetDiscardPile()
+        {
+            return discardPile.Select(x => x.Name).ToList();
         }
     }
 }

@@ -20,11 +20,19 @@ namespace TextBasedAdventure4.GameControllers.GameActions
             }
             if (deckNames.Contains(directObject))
             {
-                return controller.deckController.GetPlayerCardNames();
+                output.AddRange(controller.deckController.GetPlayerCardNames());
             }
             if(directObject == "hand")
             {
-                return controller.deckController.GetPlayerHand();
+                output.AddRange(controller.deckController.GetPlayerHand());
+            }
+            if(directObject == "discard")
+            {
+                output.AddRange(controller.deckController.GetDiscardPile());
+            }
+            if(output.Count() == 0)
+            {
+                output.AddRange(controller.deckController.GetCardInfo(string.Join(" ", seperatedWords.Skip(1))));
             }
             return output;
         }
