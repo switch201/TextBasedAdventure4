@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TextBasedAdventure4.GameObjects;
+using TextBasedAdventure4.Games.GameObjects;
 
 namespace TextBasedAdventure4.Games.Factories
 {
@@ -15,16 +15,6 @@ namespace TextBasedAdventure4.Games.Factories
         {
             T result = gameObject.ToObject<T>();
             var sucess = Enum.TryParse<ConsoleColor>((string)gameObject["Color"], true, out ConsoleColor color);
-            if (color == null || !sucess)
-            {
-                result.Description = new ConsoleOutput((string)gameObject["Description"]);
-                result.Name = new ConsoleOutput((string)gameObject["Name"]);
-            }
-            else
-            {
-                result.Description = new ConsoleOutput((string)gameObject["Description"], color);
-                result.Name = new ConsoleOutput((string)gameObject["Name"], color);
-            }
             return result;
         }
     }

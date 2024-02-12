@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TextBasedAdventure4.GameControllers.RuleEngines;
 
 namespace TextBasedAdventure4.GameControllers.GameActions
 {
-    internal class Move : GameAction
+    internal class PlayCard : GameAction
     {
         private static List<string> direction = new List<string>()
         {
@@ -16,12 +15,13 @@ namespace TextBasedAdventure4.GameControllers.GameActions
             "left",
             "right"
         };
-        public override List<string> keyWords => new List<string>() { "move" };
+        public override List<string> keyWords => new List<string>() { "play", "use"};
 
         public override List<ConsoleOutput> RespondToInput(GameController controller, List<string> seperatedWords)
         {
             // Checks to see if the request makes any sense
             List<ConsoleOutput> output = new List<ConsoleOutput>();
+            var cardName = seperatedWords[1];
             if (!direction.Contains(seperatedWords.Last()))
             {
                 output.Add(new ConsoleOutput("you have to say a direction\n"));
@@ -29,7 +29,7 @@ namespace TextBasedAdventure4.GameControllers.GameActions
             else
             {
                 var start = controller.roomController.GetPlayerSpace();
-                var end = (0,0);
+                var end = (0, 0);
                 switch (seperatedWords.Last())
                 {
                     case "up":
@@ -45,7 +45,16 @@ namespace TextBasedAdventure4.GameControllers.GameActions
                         end = (start.Item1, start.Item2 + 1);
                         break;
                 }
-                output.AddRange(controller.roomController.AttemptToChangeSpace(start, end));
+                var ruleResult = controller.playerDeckController.CanPlayCard(cardName);
+                if (ruleResult.Success)
+                {
+                    controller.PlayCard(cardName, end);
+                    output.Add(new ConsoleOutput($"You Played {cardName}!\n"));
+                }
+                else
+                {
+                    output.AddRange(ruleResult.Messages);
+                }
             }
             return output;
         }

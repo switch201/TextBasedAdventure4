@@ -3,28 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TextBasedAdventure4.GameObjects;
+using TextBasedAdventure4.Games.GameObjects;
 
 namespace TextBasedAdventure4.Games.Decks
 {
+    public enum CardType
+    {
+        Attack,
+        Defense,
+        Effect,
+    }
     public class Card : GameObject
     {
-        public CardEffects CardEffects { get; set; }
+        public CardEffect CardEffects { get; set; }
+
+        public CardType CardType { get; set; }
 
         public int Level { get;  }
 
-        public List<ConsoleOutput> GetDescription()
+        public int Range { get; set; }
+
+        internal ConsoleColor GetColor()
         {
-            return new List<ConsoleOutput>()
+            if(CardType == CardType.Defense)
             {
-                new ConsoleOutput($"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n", ConsoleColor.Green),
-                new ConsoleOutput($"Card Name: {Name.Message}\n"),
-                new ConsoleOutput($"Card Description: {Description.Message}\n"),
-                new ConsoleOutput($"Cost: : {CardEffects.Cost}\n", ConsoleColor.Yellow),
-                new ConsoleOutput($"Damage: : {CardEffects.Damage}\n", ConsoleColor.Red),
-                new ConsoleOutput($"Defense: : {CardEffects.Block}\n", ConsoleColor.Blue),
-                new ConsoleOutput($"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n", ConsoleColor.Green)
-            };
+                return ConsoleColor.Green;
+            }
+            if(CardType == CardType.Attack)
+            {
+                return ConsoleColor.Red;
+            }
+            if(CardType == CardType.Effect)
+            {
+                return ConsoleColor.Blue;
+            }
+            return ConsoleColor.White;
         }
     }
 }

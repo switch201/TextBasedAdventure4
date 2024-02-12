@@ -6,5 +6,9 @@
   "Health": 10,
   "MaxMovement": 4,
   "CurrentMovement": 4,
-  "HandLimit": 3
+  "MaxHealth": 10,
+  "CurrentHealth": 10,
+  "CurrentActionPoints": 2,
+  "HandLimit": 7,
+  "MaxActionPoints":  2
 }

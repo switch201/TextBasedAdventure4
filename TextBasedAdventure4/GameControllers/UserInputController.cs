@@ -21,6 +21,9 @@ namespace TextBasedAdventure4.GameControllers
             new Inspect(),
             new Move(),
             new Exit(),
+            new Help(),
+            new Stats(),
+            new PlayCard()
         };
 
         private List<string> NormalizeInput(string userInput)
@@ -39,10 +42,16 @@ namespace TextBasedAdventure4.GameControllers
         {
             var seperatedWords = NormalizeInput(Util.ReadLine());
             var gameAction = GetAction(seperatedWords);
+            var resultOutput = new List<ConsoleOutput>() { };
             if(gameAction != null)
             {
-                Util.Write(gameAction.RespondToInput(gameController, seperatedWords));
+                resultOutput.AddRange(gameAction.RespondToInput(gameController, seperatedWords));
             }
+            else
+            {
+                resultOutput.Add(new ConsoleOutput("That's not an action\n", ConsoleColor.Red));
+            }
+            Util.Write(resultOutput);
         }
     }
 }

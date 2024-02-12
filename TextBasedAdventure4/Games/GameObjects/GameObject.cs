@@ -5,14 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextBasedAdventure4.GameObjects
+namespace TextBasedAdventure4.Games.GameObjects
 {
     public abstract class GameObject
     {
-        [JsonIgnore]
-        public ConsoleOutput Description { get; set; }
+        public string Description { get; set; }
 
-        [JsonIgnore]
-        public ConsoleOutput Name { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -11,27 +11,16 @@ namespace TextBasedAdventure4
         public string Message;
 
         public ConsoleColor Color;
-
-        public bool SingleLine;
         public ConsoleOutput(string message)
         {
             Message = message;
             Color = ConsoleColor.White;
-            SingleLine = false;
         }
 
         public ConsoleOutput(string message, ConsoleColor color)
         {
             Message = message;
             Color = color;
-            SingleLine = false;
-        }
-
-        public ConsoleOutput(string message, ConsoleColor color, bool singleLine)
-        {
-            Message = message;
-            Color = color;
-            SingleLine = singleLine;
         }
     }
 }

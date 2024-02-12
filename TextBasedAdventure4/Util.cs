@@ -53,7 +53,7 @@ namespace TextBasedAdventure4
 
         public static string ReadLine()
         {
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             return Console.ReadLine().ToLower();
         }
 

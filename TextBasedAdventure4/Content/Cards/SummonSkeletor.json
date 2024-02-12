@@ -1,0 +1,12 @@
+{
+  "Name": "Summon",
+  "Description": "Its a weak Attack",
+  "Level": 0,
+  "CardEffects": {
+    "Damage": 0,
+    "Block": 0,
+    "Cost": 1,
+    "Summonable": "skeletor"
+  },
+  "CardType": "Effect"
+}

@@ -15,7 +15,7 @@ namespace TextBasedAdventure4.Games.Factories
         {
             JObject jObject = JObject.Load(reader);
             var card = CreateGameObject(jObject);
-            card.CardEffects = jObject["CardEffects"].ToObject<CardEffects>();
+            card.CardEffects = jObject["CardEffects"].ToObject<CardEffect>();
             return card;
         }
 

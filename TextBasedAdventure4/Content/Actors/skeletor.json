@@ -1,10 +1,11 @@
 {
-  "Name": "Jeff",
+  "Name": "Skeletor",
   "Description": "A Creepy Skeltor Mang",
-  "ActionPoints":  2,
+  "ActionPoints": 2,
   "Deck": "SkeletorDeck",
   "Health": 5,
   "MaxMovement": 2,
   "CurrentMovement": 2,
-  "HandLimit":  1
+  "HandLimit": 1,
+  "MaxActionPoints":  1
 }

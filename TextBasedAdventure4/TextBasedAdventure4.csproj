@@ -10,10 +10,11 @@
   <ItemGroup>
     <None Remove="Content\Actors\Player.json" />
     <None Remove="Content\Actors\Skeletor.json" />
-    <None Remove="Content\Cards\Pary.json" />
+    <None Remove="Content\Cards\Parry.json" />
     <None Remove="Content\Cards\Slash.json" />
     <None Remove="Content\Cards\StrongAttack.json" />
     <None Remove="Content\Cards\StrongDefense.json" />
+    <None Remove="Content\Cards\SummonSkeletor.json" />
     <None Remove="Content\Cards\WeakAttack.json" />
     <None Remove="Content\Cards\WeakDefense.json" />
     <None Remove="Content\Decks\DaggerDeck.json" />
@@ -31,13 +32,16 @@
     <Content Include="Content\Actors\skeletor.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Cards\Pary.json">
+    <Content Include="Content\Cards\Parry.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Cards\Slash.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Cards\StrongDefense.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Cards\SummonSkeletor.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Cards\WeakDefense.json">
